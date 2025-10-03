@@ -49,11 +49,11 @@
     #profile-view {
       margin-top: 40px;
       text-align: center;
-      display: none;
+      display: none; /* hidden until a person is clicked */
       position: relative;
     }
 
-    #profile-view img {
+    #profile-img {
       max-width: 300px;
       border-radius: 12px;
     }
@@ -109,4 +109,43 @@
       <div>Lily</div>
     </div>
     <div class="gallery-item" onclick="showProfile('Li','li.png')">
-      <img
+      <img src="li.png" alt="Li">
+      <div>Li</div>
+    </div>
+  </div>
+
+  <!-- Profile section -->
+  <div id="profile-view">
+    <h2 id="profile-name"></h2>
+    <img id="profile-img" src="" alt="Selected Person">
+    <br>
+    <img id="tomato-button" src="tomatobutton.png" alt="Throw Tomato" onclick="throwTomato()">
+    <img id="tomato-throw" src="tomatothrow.gif" alt="Tomato Throw">
+    <audio id="splat-sound" src="splat.mp3"></audio>
+  </div>
+
+  <script>
+    function showProfile(name, imgSrc) {
+      const profileView = document.getElementById('profile-view');
+      const profileName = document.getElementById('profile-name');
+      const profileImg = document.getElementById('profile-img');
+      const throwGif = document.getElementById('tomato-throw');
+
+      profileName.innerText = name;
+      profileImg.src = imgSrc;
+      profileView.style.display = 'block';
+      throwGif.style.display = 'none'; // reset throw gif
+    }
+
+    function throwTomato() {
+      const throwGif = document.getElementById('tomato-throw');
+      const sound = document.getElementById('splat-sound');
+
+      throwGif.style.display = 'block';
+      throwGif.src = 'tomatothrow.gif?' + new Date().getTime(); // restart gif
+      sound.currentTime = 0;
+      sound.play();
+    }
+  </script>
+</body>
+</html>
