@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tomato Throw Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: 2em;
+      color: #ff4444;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .gallery-item {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.1);
+    }
+
+    #profile-view {
+      margin-top: 40px;
+      text-align: center;
+      display: none;
+      position: relative;
+    }
+
+    #profile-view img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+
+    #tomato-button {
+      margin-top: 20px;
+      width: 100px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #tomato-button:hover {
+      transform: scale(1.1);
+    }
+
+    #tomato-throw {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 400px;
+      display: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tomato Throw Gallery</h1>
+
+  <div class="gallery">
+    <div class="gallery-item" onclick="showProfile('StrangeSMO','smo.png')">
+      <img src="smo.png" alt="StrangeSMO">
+      <div>StrangeSMO</div>
+    </div>
+    <div class="gallery-item" onclick="showProfile('Maja','maja.png')">
+      <img src="maja.png" alt="Maja">
+      <div>Maja</div>
+    </div>
+    <div class="gallery-item" onclick="showProfile('Cherry','cherry.png')">
+      <img src="cherry.png" alt="Cherry">
+      <div>Cherry</div>
+    </div>
+    <div class="gallery-item" onclick="showProfile('Sol','sol.png')">
+      <img src="sol.png" alt="Sol">
+      <div>Sol</div>
+    </div>
+    <div class="gallery-item" onclick="showProfile('Josj','josj.png')">
+      <img src="josj.png" alt="Josj">
+      <div>Josj</div>
+    </div>
+    <div class="gallery-item" onclick="showProfile('Lily','lily.png')">
+      <img src="lily.png" alt="Lily">
+      <div>Lily</div>
+    </div>
+    <div class="gallery-item" onclick="showProfile('Li','li.png')">
+      <img
